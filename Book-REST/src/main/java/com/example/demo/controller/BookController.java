@@ -20,27 +20,27 @@ public class BookController {
 	@Autowired
 	BookService service;
 	
-	@PostMapping("/book")
+	@PostMapping("/Book")
 	public boolean add(@RequestBody Book book) {
 		return service.addBook(book);
 	}
 	
-	@GetMapping("/book")
+	@GetMapping("/Book")
 	public List<Book> read(){
 		return service.readBook();
 	}
 	
-	@GetMapping("/book/{id}")
+	@GetMapping("/Book/{id}")
 	public Optional<Book> readById(@PathVariable int id) {
 		return service.readBookById(id);
 	}
 	
-	@PutMapping("/book/{id}")
+	@PutMapping("/Book/{id}")
 	public Book update(@RequestBody Book book) {
 		return service.updateBook(book);
 	}
 	
-	@DeleteMapping("/book/{id}")
+	@DeleteMapping("/Book/{id}")
 	public Boolean delete(@PathVariable int id) {
 		return service.deleteBook(id);
 	}
